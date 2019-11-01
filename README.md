@@ -19,6 +19,6 @@ front-end (google api altså kartet) -> får data(hvor punktene skal plasseres o
 
 
 
-hvis dette diskuterer vi videre nestegang også.
+hvis dette diskuterer vi videre nestegang også. så hvis du ikkje fårstår det eg har skreve nå kan vi ta det da.
 
 
