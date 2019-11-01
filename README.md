@@ -1,4 +1,4 @@
-# STUF navn?
+# STUF trenger navn?
 Prosjekt Eier :Geir
 
 Historier og siddis snakk?
