@@ -2,7 +2,7 @@
 Prosjekt Eier :Geir
 
 Regler
-1. Skrive gode utfyllende kommentarer som breskiver hva som er blitt gjort.
+1. Skrive gode utfyllende kommentarer som beskriver hva som er blitt gjort.
   - Tips: commit og psuh ofte!
   
   
