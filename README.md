@@ -23,6 +23,6 @@ dette diskuterer vi videre nestegang også(komm gjerne med enkle html og css for
 
 
 Nyttige Lenker
-https://www.nrk.no/rogaland/planlegger-norges-forste-urbane-folkehoyskole-1.14102157
-https://docs.google.com/document/d/1FSkuNe2hvbSEVJT3v-X-G54RDQLGyzVZTbzNpIVqgIs/edit
+https://www.nrk.no/rogaland/planlegger-norges-forste-urbane-folkehoyskole-1.14102157<br/>
+https://docs.google.com/document/d/1FSkuNe2hvbSEVJT3v-X-G54RDQLGyzVZTbzNpIVqgIs/edit <br/>
 https://stufskole.no/
