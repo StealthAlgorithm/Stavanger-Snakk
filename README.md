@@ -1,4 +1,4 @@
-# trenger navn?
+# Siddis Snakk
 Prosjekt Eier :Geir
 
 Historier og siddis snakk?
@@ -22,3 +22,6 @@ front-end (google api altså kartet) -> får data(hvor punktene skal plasseres o
 dette diskuterer vi videre nestegang også(komm gjerne med enkle html og css forslag(dette blir kunn en skisse)). så hvis du ikkje fårstår det eg har skreve nå kan vi ta det da.
 
 
+Nyttige Lenker
+https://www.nrk.no/rogaland/planlegger-norges-forste-urbane-folkehoyskole-1.14102157
+https://docs.google.com/document/d/1FSkuNe2hvbSEVJT3v-X-G54RDQLGyzVZTbzNpIVqgIs/edit
