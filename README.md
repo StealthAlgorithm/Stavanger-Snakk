@@ -1,7 +1,12 @@
 # Siddis Snakk
 Prosjekt Eier :Geir
 
-Historier og siddis snakk?
+Regler
+1. Skrive gode utfyllende kommentarer som breskiver hva som er blitt gjort.
+  - Tips: commit og psuh ofte!
+  
+  
+Historier og siddis snakk
 
 
 Formål med prosjektet er å lage en side med et kart hvor personer kan legge til punkter på kartet (altså en plass).
