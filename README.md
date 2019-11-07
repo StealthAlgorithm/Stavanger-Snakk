@@ -5,8 +5,9 @@ Prosjekt Eier :Geir
 1. Skrive gode utfyllende kommentarer som beskriver hva som er blitt gjort.
   - Tips: commit og psuh ofte!
   
-<h1>Historier og siddis snakk</h1>
+<h1>Formål</h1>
 
+Historier og siddis snakk
 
 Formål med prosjektet er å lage en side med et kart hvor personer kan legge til punkter på kartet (altså en plass).
 Plassen inneholder gjerne en historie, og denne historien skal vises på siden gjerne under kartet?
