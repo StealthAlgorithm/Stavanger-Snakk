@@ -36,14 +36,17 @@ router
   //sender data i form av json
   .post("/historydata", async (ctx, next) => {
     console.log("refreshed");
+    //henter data fra database med spørre streng 0
     let data = await connect.query(0);
     ctx.status = HttpStatus.OK;
+    //legger ut json dataen
     ctx.body = data[0];
     await next();
   })
   //motar data i form av json
   .post("/historypostdata", async (ctx, next) => {
     ctx.status = HttpStatus.OK;
+    //henter json data
     let test = ctx.request.body;
     console.log(test);
     await next();

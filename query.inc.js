@@ -1,3 +1,4 @@
+//henter DB login
 const db = require("./db.inc");
 
 module.exports = class connect {
@@ -5,6 +6,7 @@ module.exports = class connect {
     console.log("DB Query");
     console.log(type);
     let sql;
+    //valg av sql streng oppgis ved tall
     try {
       switch (type) {
         case 0:
