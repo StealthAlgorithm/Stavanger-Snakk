@@ -1,9 +1,8 @@
 "use strict";
 
-//viktig en installerer alle pakkene
-
 const Connect = require("./query.inc");
 
+//viktig en installerer alle pakkene
 const BodyParser = require("koa-bodyparser");
 const Logger = require("koa-logger");
 const cors = require("koa2-cors");
