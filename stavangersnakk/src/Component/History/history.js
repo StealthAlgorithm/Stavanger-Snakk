@@ -24,7 +24,7 @@ export default class History extends Component {
       //console.log();
       let newdata = [];
       for (let hist of data) {
-        newdata.push(hist.Title);
+        newdata.push(hist.History);
       }
       this.setState({ Historys: newdata });
     }
@@ -36,7 +36,7 @@ export default class History extends Component {
         <h1>Historys</h1>
 
         {this.state.Historys.map((value, index) => {
-          return <p>value</p>;
+          return <p>{value}</p>;
         })}
       </div>
     );

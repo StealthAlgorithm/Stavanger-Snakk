@@ -41,6 +41,7 @@ router
     ctx.status = HttpStatus.OK;
     //legger ut json dataen
     ctx.body = data[0];
+    console.log(data[0]);
     await next();
   })
   //motar data i form av json
