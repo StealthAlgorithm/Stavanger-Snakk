@@ -1,5 +1,7 @@
 "use strict";
 
+//viktig en installerer alle pakkene
+
 const Connect = require("./query.inc");
 
 const BodyParser = require("koa-bodyparser");
@@ -29,7 +31,9 @@ app.use(BodyParser());
 app.use(Logger());
 app.use(cors());
 
+// sende og mota data
 router
+  //sender data i form av json
   .post("/historydata", async (ctx, next) => {
     console.log("refreshed");
     let data = await connect.query(0);
@@ -37,6 +41,7 @@ router
     ctx.body = data[0];
     await next();
   })
+  //motar data i form av json
   .post("/historypostdata", async (ctx, next) => {
     ctx.status = HttpStatus.OK;
     let test = ctx.request.body;
@@ -44,6 +49,7 @@ router
     await next();
   });
 
+//feil hontrering
 app.use(async (ctx, next) => {
   try {
     await next();
