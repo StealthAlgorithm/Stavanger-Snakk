@@ -35,7 +35,7 @@ app.use(cors());
 router
   //sender data i form av json
   .post("/historydata", async (ctx, next) => {
-    console.log("refreshed");
+    console.log("Henter historie data");
     //henter data fra database med spørre streng 0
     let data = await connect.query(0);
     ctx.status = HttpStatus.OK;
@@ -45,10 +45,11 @@ router
   })
   //motar data i form av json
   .post("/historypostdata", async (ctx, next) => {
+    console.log("Mottar Historie data");
     ctx.status = HttpStatus.OK;
     //henter json data
     let test = ctx.request.body;
-    console.log(test);
+    //console.log(test);
     await next();
   });
 
