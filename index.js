@@ -35,7 +35,7 @@ app.use(cors());
 router
   //sender data i form av json
   .post("/historydata", async (ctx, next) => {
-    console.log("Henter historie data");
+    console.log("lastet side, begynner å hente historie data");
     //henter data fra database med spørre streng 0
     let data = await connect.query(0);
     ctx.status = HttpStatus.OK;
@@ -45,7 +45,7 @@ router
   })
   //motar data i form av json
   .post("/historypostdata", async (ctx, next) => {
-    console.log("Mottar Historie data");
+    console.log("lastet side, begynner å motta Historie data");
     ctx.status = HttpStatus.OK;
     //henter json data
     let test = ctx.request.body;
@@ -70,5 +70,5 @@ app.use(router.allowedMethods());
 app.use(router.routes());
 
 app.listen(11000, () => {
-  console.log("lytter på post 11000");
+  console.log("lytter på port 11000, http://localhost:11000");
 });
