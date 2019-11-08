@@ -21,12 +21,7 @@ export default class History extends Component {
     const status = promise.status;
     if (status === 200) {
       const data = promise.data;
-      //console.log();
-      let newdata = [];
-      for (let hist of data) {
-        newdata.push(hist.History);
-      }
-      this.setState({ Historys: newdata });
+      this.setState({ Historys: data });
     }
   }
 
@@ -36,7 +31,7 @@ export default class History extends Component {
         <h1>Historys</h1>
 
         {this.state.Historys.map((value, index) => {
-          return <p>{value}</p>;
+          return <p>{value.History + " " + value.Latitude}</p>;
         })}
       </div>
     );
