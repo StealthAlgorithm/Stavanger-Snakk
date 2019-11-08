@@ -30,7 +30,7 @@ app.use(BodyParser());
 app.use(Logger());
 app.use(cors());
 
-// sende og mota data
+// -------------------sende og mota data---------------------
 router
   //sender data i form av json
   .post("/historydata", async (ctx, next) => {
@@ -52,6 +52,7 @@ router
     //console.log(test);
     await next();
   });
+//-------------------------------------------------------------
 
 //feil hontrering
 app.use(async (ctx, next) => {
