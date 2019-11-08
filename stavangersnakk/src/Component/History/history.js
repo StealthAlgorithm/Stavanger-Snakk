@@ -31,7 +31,15 @@ export default class History extends Component {
         <h1>Historys</h1>
 
         {this.state.Historys.map((value, index) => {
-          return <p>{value.History + " " + value.Latitude}</p>;
+          return (
+            <p>
+              {value.History +
+                " Latitude: " +
+                value.Latitude +
+                " Longitude: " +
+                value.Longitude}
+            </p>
+          );
         })}
       </div>
     );
