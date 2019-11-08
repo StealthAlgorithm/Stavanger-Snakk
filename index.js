@@ -17,11 +17,13 @@ const router = new Router();
 
 const static_pages = new Koa();
 const connect = new Connect();
-static_pages.use(serve(__dirname + "/stavsnakk-frontend/build"));
+//_______________mounting front end__________________________
+static_pages.use(serve(__dirname + "/stavangersnakk/build"));
 app.use(mount("/", static_pages));
 app.use(mount("/newhistory", static_pages));
 app.use(mount("/new", static_pages));
 app.use(mount("/404", static_pages));
+//___________________________________________________________
 
 app.use(BodyParser());
 app.use(Logger());

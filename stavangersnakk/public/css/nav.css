@@ -1,0 +1,54 @@
+@media only screen and (min-width: 800px) {
+  nav {
+    font-family: "Quicksand", sans-serif;
+    font-size: 19px;
+    color: white;
+    width: 40%;
+    box-sizing: border-box;
+  }
+  nav ul {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 0px;
+    margin: 0;
+    align-items: center;
+  }
+  nav li {
+    list-style-type: none;
+  }
+  nav li a {
+    padding: 28px 10px;
+    text-decoration: none;
+    text-align: center;
+  }
+  nav li a:hover {
+    border-bottom: 2px solid rgb(0, 167, 209);
+  }
+}
+nav {
+  font-family: "Quicksand", sans-serif;
+  font-size: 19px;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+nav ul {
+  padding-left: 0px;
+  margin: 0;
+  align-items: center;
+}
+nav li {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+nav li a {
+  padding: 28px 10px;
+  text-decoration: none;
+  text-align: center;
+}
+nav li a:hover {
+  border-bottom: 2px solid rgb(0, 167, 209);
+}

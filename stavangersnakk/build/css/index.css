@@ -1,0 +1,114 @@
+/* Må erstattes med mobil*/
+html,
+body {
+  color: white;
+  box-sizing: border-box;
+  background-color: #131313;
+  height: 100%;
+
+  padding: 0px;
+  margin: 0px;
+}
+
+@media only screen and (min-width: 800px) {
+  .container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: [main-start] 5fr [content-start] 2fr [content-end main-end];
+    grid-template-rows: [main-start] 80px [content-start] auto [content-end] 40px [main-end];
+  }
+}
+
+header,
+main,
+aside,
+footer {
+  display: flex;
+}
+
+header,
+footer {
+  position: sticky;
+  background-image: linear-gradient(
+    to right,
+    rgb(0, 61, 141),
+    rgb(0, 122, 151)
+  );
+}
+
+header {
+  grid-column: main;
+  justify-content: space-between;
+}
+
+header > #main-logo {
+  display: none;
+}
+@media only screen and (min-width: 1000px) {
+  header > #main-logo {
+    height: 30px;
+    display: flex;
+    align-self: center;
+    padding: 10px;
+    margin-left: 10px;
+  }
+}
+
+header > form {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  header > form,
+  header > nav {
+    display: flex;
+  }
+}
+header > form {
+  width: 60%;
+  justify-content: end;
+  align-items: center;
+}
+header > form > input {
+  color: white;
+  margin-right: 2%;
+  height: 30px;
+  font-size: 17px;
+}
+
+main {
+  background-color: #00293a;
+}
+
+aside {
+  grid-area: content;
+  background-color: #001c28;
+  justify-content: end;
+}
+
+footer {
+  grid-column: main;
+  background-color: #ffcc5c;
+}
+
+.transparent {
+  background-color: hsla(0, 60%, 0%, 0.4);
+}
+.transparent-w {
+  background-color: rgba(255, 255, 255, 0.103);
+}
+.no-border {
+  border: none;
+}
+.justify-end {
+  justify-content: end;
+}
+.p10 {
+  padding: 10px;
+}
+.p0-30 {
+  padding: 0 30px;
+}
+.h47 {
+  height: 47px;
+}
