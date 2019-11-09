@@ -90,7 +90,10 @@ footer {
   grid-column: main;
   background-color: #ffcc5c;
 }
-
+.map {
+  height: 500px;
+  width: 1000px;
+}
 .transparent {
   background-color: hsla(0, 60%, 0%, 0.4);
 }
