@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import Viewmap from "./Viewmap";
 import axios from "axios";
 
 export default class History extends Component {
@@ -29,10 +29,10 @@ export default class History extends Component {
     return (
       <div>
         <h1>Historys</h1>
-
+        <Viewmap />
         {this.state.Historys.map((value, index) => {
           return (
-            <p>
+            <p key={index}>
               {value.History +
                 " Latitude: " +
                 value.Latitude +
