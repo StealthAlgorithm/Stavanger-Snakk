@@ -8,10 +8,10 @@ export default class Viewmap extends Component {
   }
   render() {
     return (
-      <Map center={this.position} zoom={13.2} className="map">
+      <Map center={this.position} zoom={14.2} className="map">
         <TileLayer
           // attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          url="https://{s}.tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png"
         />
         <Marker position={this.position}>
           <Popup>
