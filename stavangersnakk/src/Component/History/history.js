@@ -7,12 +7,9 @@ export default class History extends Component {
     super(props);
     this.state = {
       id: [],
-      Historys: []
+      Historys: [{ id: 0, Latitude: 58.962406, Longitude: 5.741906 }]
     };
     this.loadHistory = this.loadHistory.bind(this);
-  }
-
-  componentWillMount() {
     this.loadHistory();
   }
 
@@ -22,11 +19,11 @@ export default class History extends Component {
     if (status === 200) {
       const data = promise.data;
       this.setState({ Historys: data });
-      console.log(this.state.Historys);
     }
   }
 
   render() {
+    console.log(this.state.Historys);
     return (
       <div>
         <h1>Historys</h1>

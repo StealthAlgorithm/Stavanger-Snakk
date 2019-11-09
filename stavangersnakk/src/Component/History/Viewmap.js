@@ -1,16 +1,18 @@
 import React, { Component } from "react";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet";
+import { Map, TileLayer } from "react-leaflet";
 import Cmarker from "./marker";
 export default class Viewmap extends Component {
   constructor(props) {
-    super();
+    super(props);
     this.center = [58.969975, 5.733107];
-    this.posistion = [{ id: 0, Latitude: 58.967158, Longitude: 5.732188 }];
+    this.posistion = [{ id: 0, Latitude: 58.962406, Longitude: 5.741906 }];
     //this.Historys = props.Historys;
-    //console.log(props);
+    this.state = {
+      data: props.Historys
+    };
   }
-
   render() {
+    console.log(this.state.data);
     const markers = this.posistion.map(marker => (
       <Cmarker key={marker.id} marker={marker} />
     ));
