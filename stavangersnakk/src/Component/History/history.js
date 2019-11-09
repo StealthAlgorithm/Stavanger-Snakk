@@ -22,6 +22,7 @@ export default class History extends Component {
     if (status === 200) {
       const data = promise.data;
       this.setState({ Historys: data });
+      console.log(this.state.Historys);
     }
   }
 
@@ -29,7 +30,7 @@ export default class History extends Component {
     return (
       <div>
         <h1>Historys</h1>
-        <Viewmap />
+        <Viewmap Historys={this.state.Historys} />
         {this.state.Historys.map((value, index) => {
           return (
             <p key={index}>
