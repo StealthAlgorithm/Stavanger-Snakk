@@ -18,7 +18,7 @@ export default class Viewmap extends Component {
     ));
 
     return (
-      <Map center={this.center} zoom={14.2} className="map">
+      <Map center={this.center} zoom={14.2} minZoom={13} className="map">
         <TileLayer
           // attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png"
