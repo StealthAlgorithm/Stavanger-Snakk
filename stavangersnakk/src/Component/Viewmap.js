@@ -24,6 +24,7 @@ export default class Viewmap extends Component {
         minZoom={13}
         className="map"
         maxBounds={[[58.986145, 5.763853], [58.945169, 5.693569]]}
+        click={console.log("click")}
       >
         <TileLayer
           // attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
