@@ -1,5 +1,5 @@
 //henter DB login
-const db = require("./db.inc");
+const db = require("./config/db.inc");
 
 module.exports = class connect {
   async query(type) {
