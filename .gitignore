@@ -391,8 +391,4 @@ packages/react-devtools-extensions/firefox/*.pem
 packages/react-devtools-extensions/shared/build
 packages/react-devtools-inline/dist
 packages/react-devtools-shell/dist
-<<<<<<< HEAD
 db.inc.js
-=======
-/db.inc.js
->>>>>>> 74478c88eadbb555ea4d816fa1f1f91ce7988d08
