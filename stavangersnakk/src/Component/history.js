@@ -23,10 +23,9 @@ export default class History extends Component {
   }
 
   render() {
-    console.log(this.state.Historys);
+    console.log("Loading History");
     return (
       <div>
-        <h1>Historys</h1>
         <Viewmap Historys={this.state.Historys} />
         {this.state.Historys.map((value, index) => {
           return (
