@@ -12,3 +12,6 @@ Created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 Edited TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 DateDeleted DATE
 );
+
+
+insert into History(UserID, Longitude, Latitude, History) values(1,5.733107,58.969975,"Dette er Stavanger");

@@ -6,13 +6,13 @@ export default class Viewmap extends Component {
     super(props);
     this.center = [58.969975, 5.733107];
     this.posistion = [{ id: 0, Latitude: 58.962406, Longitude: 5.741906 }];
-    //this.Historys = props.Historys;
+    this.historys = props.Historys;
     this.state = {
-      data: props.Historys
+      data: []
     };
   }
+
   render() {
-    console.log(this.state.data);
     const markers = this.posistion.map(marker => (
       <Cmarker key={marker.id} marker={marker} />
     ));
@@ -23,8 +23,10 @@ export default class Viewmap extends Component {
         zoom={14.2}
         minZoom={13}
         className="map"
-        maxBounds={[[58.986145, 5.763853], [58.945169, 5.693569]]}
-        click={console.log("click")}
+        maxBounds={[
+          [58.986145, 5.763853],
+          [58.945169, 5.693569]
+        ]}
       >
         <TileLayer
           // attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

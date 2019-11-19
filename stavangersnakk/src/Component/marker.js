@@ -1,10 +1,10 @@
 import React from "react";
 import { Marker, Popup } from "react-leaflet";
-function Cmarker(props) {
+async function Cmarker(props) {
   return (
     <div className="marker">
       <Marker
-        position={[props.marker.Latitude, props.marker.Longitude]}
+        position={await [props.marker.Latitude, props.marker.Longitude]}
         draggable={false}
       >
         {/*   <Popup>
