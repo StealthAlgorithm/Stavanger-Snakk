@@ -60,8 +60,9 @@ export default class History extends Component {
           ]}
         >
           <TileLayer
+            //nytt design kart designer konstatin
             // attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.thunderforest.com/mobile-atlas/{z}/{x}/{y}.png"
+            url="https://api.mapbox.com/styles/v1/stealthalgorithm/ck38knnvx1c6z1cpj7nyst8g0/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RlYWx0aGFsZ29yaXRobSIsImEiOiJjazM4aGZsZ2IwOHVoM3Bvdng2a2UwNHUzIn0.H5YK9CC9XhpGRfMt0vtQrw"
           />
 
           {markers}
