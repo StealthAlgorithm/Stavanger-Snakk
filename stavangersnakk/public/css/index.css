@@ -17,6 +17,7 @@ body {
 header {
   grid-column: main;
   background: #006c70;
+  text-align: center;
 }
 
 main {
