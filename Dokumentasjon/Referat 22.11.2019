@@ -1,0 +1,17 @@
+22.11.2019
+
+-MARKØRER
+I dag kom vi fram til to fremgangsmåter. Alternativ nummer en 
+er å bruke spider cluster til å sortere markørene i tilfelle at 
+det blir plassert flere markører på samme lokasjon. 
+Spider cluster justerer hvordan markørene blir plassert for å  
+unngå kollisjon. 
+
+Alternativ nummer to er å ha faste markører som er bindet til en lokasjon.
+det blir mer oversiktligt,med mindre markører gjenerelt.
+Då trenger vi sorterings metoder som for eksempel kategorier(finn.no)
+som hjelper brukeren å navigere over interessante hendelser
+
+-INNLOGING
+Vi har lyst å bruke google signin for å forenkle innloggings  
+prosessen. I tillegg vill vi legge til en unik innloggings metode som vi lager selv. 
