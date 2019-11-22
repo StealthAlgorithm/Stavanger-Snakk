@@ -1,1 +1,1 @@
-npm install koa koa-body-parser koa-logger koa2-cors koa-static koa-mount http-status koa-router
+npm install koa koa-bodyparser koa-logger koa2-cors koa-static koa-mount http-status koa-router
