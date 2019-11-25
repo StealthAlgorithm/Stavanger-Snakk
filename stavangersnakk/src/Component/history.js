@@ -38,6 +38,13 @@ export default class History extends Component {
   handleClick = event => {
     const { lat, lng } = event.latlng;
     console.log(`Clicked at ${lat}, ${lng}`);
+    this.state.clickMarker = (
+      <Marker
+        key={"clickmarker"}
+        posistion={[lat, lng]}
+        draggable={true}
+      ></Marker>
+    );
   };
 
   render() {
@@ -71,6 +78,7 @@ export default class History extends Component {
           />
 
           {markers}
+          {this.state.clickMarker}
         </Map>
         {this.state.historys.map(value => {
           return (
