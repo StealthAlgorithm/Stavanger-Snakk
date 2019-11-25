@@ -35,6 +35,10 @@ export default class History extends Component {
       });
     });
   }
+  handleClick = event => {
+    const { lat, lng } = event.latlng;
+    console.log(`Clicked at ${lat}, ${lng}`);
+  };
 
   render() {
     const markers = this.state.historys.map(marker => (
@@ -50,6 +54,7 @@ export default class History extends Component {
     return (
       <div>
         <Map
+          onClick={this.handleClick}
           center={this.center}
           zoom={14.2}
           minZoom={13}
