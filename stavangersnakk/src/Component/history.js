@@ -8,7 +8,7 @@ export default class History extends Component {
     super(props);
     this.getcords();
     this.center = [58.969975, 5.733107];
-    this.posistion = [{ id: 0, Latitude: 58.962406, Longitude: 5.741906 }];
+    this.posistion = [];
     this.state = {
       historys: [],
       location: []
@@ -35,18 +35,20 @@ export default class History extends Component {
       });
     });
   }
-  handleClick = event => {
-    const { lat, lng } = event.latlng;
-    console.log(`Clicked at ${lat}, ${lng}`);
-    this.state.clickMarker = (
-      <Marker
-        key={"clickmarker"}
-        posistion={[lat, lng]}
-        draggable={true}
-      ></Marker>
-    );
-  };
 
+  addMarker = e => {
+    const { historys } = this.state;
+    const { lat, lng } = e.latlng;
+    historys.push({
+      HistoryID: historys.length + 1,
+      UserID: 1,
+      Latitude: lat,
+      Longitude: lng,
+      History: "tester"
+    });
+    this.setState({ historys });
+    console.log(this.state.historys);
+  };
   render() {
     const markers = this.state.historys.map(marker => (
       <Marker
@@ -61,10 +63,11 @@ export default class History extends Component {
     return (
       <div>
         <Map
-          onClick={this.handleClick}
+          onClick={this.addMarker}
           center={this.center}
           zoom={14.2}
           minZoom={13}
+          ref={this.mapRef}
           className="map"
           maxBounds={[
             [58.986145, 5.763853],
@@ -78,7 +81,6 @@ export default class History extends Component {
           />
 
           {markers}
-          {this.state.clickMarker}
         </Map>
         {this.state.historys.map(value => {
           return (

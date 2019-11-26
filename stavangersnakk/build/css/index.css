@@ -17,6 +17,7 @@ body {
 header {
   grid-column: main;
   background: #006c70;
+  text-align: center;
 }
 
 main {
@@ -26,10 +27,13 @@ main {
 footer {
   grid-column: main;
   background: #006c70;
+  text-align: center;
 }
 .map {
+  margin-top: 5%;
   min-height: 300px;
   min-width: 300px;
+  border-radius: 50%;
 }
 .transparent {
   background-color: hsla(0, 60%, 0%, 0.4);
