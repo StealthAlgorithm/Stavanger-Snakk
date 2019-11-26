@@ -11,7 +11,8 @@ export default class History extends Component {
     this.posistion = [];
     this.state = {
       historys: [],
-      location: []
+      location: [],
+      selected: []
     };
 
     this.loadHistory = this.loadHistory.bind(this);
@@ -35,6 +36,9 @@ export default class History extends Component {
       });
     });
   }
+  selectHistory(id) {
+    console.log(id);
+  }
 
   addMarker = e => {
     const { historys } = this.state;
@@ -52,6 +56,7 @@ export default class History extends Component {
   render() {
     const markers = this.state.historys.map(marker => (
       <Marker
+        onClick={this.selectHistory(marker.HistoryID)}
         key={marker.HistoryID}
         position={[marker.Latitude, marker.Longitude]}
         draggable={false}

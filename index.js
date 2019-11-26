@@ -19,7 +19,7 @@ const router = new Router();
 const static_pages = new Koa();
 const connect = new Connect();
 //_______________mounting front end__________________________
-static_pages.use(serve(__dirname + "/stavangersnakk/build"));
+static_pages.use(serve(__dirname + "/frontend/build"));
 app.use(mount("/", static_pages));
 app.use(mount("/newhistory", static_pages));
 app.use(mount("/new", static_pages));
