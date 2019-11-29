@@ -24,7 +24,9 @@ export default class History extends Component {
     const promise = await axios.post("http://localhost:11000/historydata");
     const status = promise.status;
     if (status === 200) {
-      this.setState({ historys: promise.data });
+      this.setState({
+        historys: promise.data
+      });
     }
   }
 
@@ -50,18 +52,21 @@ export default class History extends Component {
       Longitude: lng,
       History: "tester"
     });
-    this.setState({ historys });
+    this.setState({
+      historys
+    });
     console.log(this.state.historys);
   };
   render() {
     const markers = this.state.historys.map(marker => (
       <Marker
-        onClick={this.selectHistory(marker.HistoryID)}
+        onClick={console.log("test")}
         key={marker.HistoryID}
         position={[marker.Latitude, marker.Longitude]}
         draggable={false}
+        alt="test"
       >
-        <Popup>{marker.History}</Popup>
+        <Popup> {marker.History} </Popup>
       </Marker>
     ));
 
@@ -72,7 +77,6 @@ export default class History extends Component {
           center={this.center}
           zoom={14.2}
           minZoom={13}
-          ref={this.mapRef}
           className="map"
           maxBounds={[
             [58.986145, 5.763853],
@@ -84,24 +88,24 @@ export default class History extends Component {
             // attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://api.mapbox.com/styles/v1/stealthalgorithm/ck38knnvx1c6z1cpj7nyst8g0/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RlYWx0aGFsZ29yaXRobSIsImEiOiJjazM4aGZsZ2IwOHVoM3Bvdng2a2UwNHUzIn0.H5YK9CC9XhpGRfMt0vtQrw"
           />
-
           {markers}
         </Map>
         {this.state.historys.map(value => {
           return (
             <p key={value.HistoryID}>
+              {" "}
               {value.History +
                 " Latitude: " +
                 value.Latitude +
                 " Longitude: " +
-                value.Longitude}
+                value.Longitude}{" "}
             </p>
           );
-        })}
+        })}{" "}
         <h3>
-          Dine Coords lat {this.state.location[0]} og lng{" "}
-          {this.state.location[1]}
-        </h3>
+          Dine Coords lat {this.state.location[0]}
+          og lng {this.state.location[1]}{" "}
+        </h3>{" "}
       </div>
     );
   }
