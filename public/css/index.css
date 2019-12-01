@@ -26,6 +26,8 @@ header {
 main {
   grid-area: content;
   min-height: 400px;
+  display: grid;
+  grid-template-columns: 12fr;
 }
 footer {
   grid-column: main;
@@ -34,11 +36,16 @@ footer {
   color: white;
 }
 #mapid {
-  margin-top: 5%;
+  /* bad practise to use % in height*/
+  margin-top: 10px;
   min-height: 300px;
   min-width: 300px;
   border-radius: 50%;
   border: solid black 5px;
+}
+textarea {
+  min-height: 300px;
+  min-width: 400px;
 }
 .transparent {
   background-color: hsla(0, 60%, 0%, 0.4);
@@ -64,7 +71,6 @@ footer {
 /* for desktop and laptop screens */
 @media only screen and (min-width: 768px) {
   #mapid {
-    margin-top: 5%;
     min-height: 400px;
     margin-left: 100px;
     margin-right: 100px;

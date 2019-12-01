@@ -7,24 +7,52 @@
 
 <main>
     <div id="mapid"></div>
-    <script>
+    <div>
+        <button id="nyM">Legg til ny markør</button>
+        <button id="hPos">Hent min plassering</button>
+    </div>
+    <form style="display:none;" id="nyText" method="POST" action="">
+        <input type="hidden" name="koord" id="sendkord" />
+        <textarea name="tekst"></textarea>
+        <input type="submit" value="send" />
 
+    </form>
+    <script>
+        // Historire kordinat ved ny historie
+        var HistorieKord;
+
+        function clickmarker() {
+            map.on("click", function (e) {
+                HistorieKord = e.latlng;
+                L.marker(e.latlng, { draggable: 'true' }).addTo(map);
+            });
+        };
+
+        //skjekk at bruker er i stavanger sentrum?
         function getcords() {
             navigator.geolocation.getCurrentPosition(position => {
-                let brukerkord = [position.coords.latitude, position.coords.longitude];
+                HistorieKord = [position.coords.latitude, position.coords.longitude];
             });
         }
 
-        getcords();
+        function visTextFelt() {
+            document.getElementById("nyText").style.display = "block";
+        }
 
-        var map = L.map('mapid').setView([58.969975, 5.733107], 14.2);
+        let map = L.map('mapid').setView([58.969975, 5.733107], 14.2);
         L.tileLayer('https://api.mapbox.com/styles/v1/stealthalgorithm/ck38knnvx1c6z1cpj7nyst8g0/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RlYWx0aGFsZ29yaXRobSIsImEiOiJjazM4aGZsZ2IwOHVoM3Bvdng2a2UwNHUzIn0.H5YK9CC9XhpGRfMt0vtQrw', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
+        //legger til knapplytter
+        document.getElementById("nyM").onmousedown = function () { clickmarker(); visTextFelt(); };
+        document.getElementById("hPos").onmousedown = function () { getcords(); visTextFelt(); };
+
+        document.getElementById("sendkord").value = HistorieKord;
     </script>
 
     {{#each Object}}
-    <p id="history"></p>
+    <p id="historyText"></p>
     <script>
         L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("history").innerHTML = "{{ History }}" })
             //.bindPopup("{{ History }}");
