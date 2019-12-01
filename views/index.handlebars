@@ -19,11 +19,11 @@
     </form>
     <script>
         // Historire kordinat ved ny historie
-        var HistorieKord;
 
         function clickmarker() {
             map.on("click", function (e) {
-                HistorieKord = e.latlng;
+                const { lat, lng } = e.latlng;
+                document.getElementById("sendkord").value = [lat, lng];
                 L.marker(e.latlng, { draggable: 'true' }).addTo(map);
             });
         };
@@ -31,7 +31,7 @@
         //skjekk at bruker er i stavanger sentrum?
         function getcords() {
             navigator.geolocation.getCurrentPosition(position => {
-                HistorieKord = [position.coords.latitude, position.coords.longitude];
+                document.getElementById("sendkord").value = [position.coords.latitude, position.coords.longitude];
             });
         }
 
@@ -48,7 +48,6 @@
         document.getElementById("nyM").onmousedown = function () { clickmarker(); visTextFelt(); };
         document.getElementById("hPos").onmousedown = function () { getcords(); visTextFelt(); };
 
-        document.getElementById("sendkord").value = HistorieKord;
     </script>
 
     {{#each Object}}
