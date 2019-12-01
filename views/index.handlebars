@@ -54,7 +54,7 @@
     {{#each Object}}
     <p id="historyText"></p>
     <script>
-        L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("history").innerHTML = "{{ History }}" })
+        L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("historyText").innerHTML = "{{ History }}" })
             //.bindPopup("{{ History }}");
 
     </script>
