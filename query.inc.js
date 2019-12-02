@@ -4,16 +4,17 @@ const db = require("./config/db.inc");
 module.exports = class connect {
   errormsg(variable, setType) {
     console.log("Fault setting " + setType + " value=" + variable);
+    this.kjor = true;
   }
   setUserID(UserID) {
     if (typeof UserID == "number" && UserID > 0) this.UserID = UserID;
     else this.errormsg(UserID, "UserID");
   }
-  setLatLng(lat, lng) {
-    if (typeof lat == "number" && lat > 0) this.lat = lat;
-    else this.errormsg(lat, "Latitude");
-    if (typeof lng == "number" && lng > 0) this.lng = lng;
-    else this.errormsg(lng, "longitude");
+  setLatLng(nlat, nlng) {
+    let lat = parseFloat(nlat);
+    let lng = parseFloat(nlng);
+    this.lat = lat;
+    this.lng = lng;
   }
   setHistory(history) {
     if (history.length > 20 && typeof history == "string")
@@ -21,7 +22,8 @@ module.exports = class connect {
     else this.errormsg(history, "History text");
   }
   async queryread(type) {
-    if (typeof type == "number") console.log("a number OK");
+    console.log("________________________________________");
+    //  if (typeof type == "number") console.log("a number OK");
     console.log("trying to read data with type " + type);
     let sql;
     //valg av sql streng oppgis ved tall
@@ -44,7 +46,8 @@ module.exports = class connect {
     let sql;
     let variables;
     try {
-      if (typeof type == "number") console.log("a number OK");
+      //  if (typeof type == "number") console.log("a number OK");
+      console.log("****************************************");
       console.log("trying to insert data with type " + type);
       switch (type) {
         case 0:
@@ -56,10 +59,11 @@ module.exports = class connect {
           console.log("Feil: sql spørringstype ikke satt");
           break;
       }
-      await db.execute(sql, variables, (err, statement) => {
-        if (err) throw err;
-        statement.close();
-      });
+      if (!this.kjor)
+        db.execute(sql, await variables, (err, statement) => {
+          if (err) throw err;
+          statement.close();
+        });
     } catch (err) {
       console.log(err);
     }

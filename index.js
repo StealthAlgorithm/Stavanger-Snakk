@@ -27,12 +27,12 @@ app.get("/", async function(req, res) {
 });
 
 app.post("/", async function(req, res) {
-  console.log(req.body.tekst + " " + req.body.koord);
-  connect.setUserID(1);
-  connect.setLatLng(req.body.koord);
-  connect.setHistory(req.body.tekst);
+  let kords = req.body.koord.split(",");
+  await connect.setUserID(1);
+  await connect.setLatLng(kords[0], kords[1]);
+  await connect.setHistory(req.body.tekst);
 
-  await connect.querywrite(0);
+  connect.querywrite(0);
   res.redirect("/");
 });
 app.listen(3000);

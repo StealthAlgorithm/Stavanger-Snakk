@@ -40,7 +40,8 @@ footer {
   margin-top: 10px;
   min-height: 300px;
   min-width: 300px;
-  border-radius: 50%;
+  /* border-radius: 50%;
+*/
   border: solid black 5px;
 }
 form {
