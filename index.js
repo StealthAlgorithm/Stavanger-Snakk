@@ -13,7 +13,7 @@ app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/public"));
 
 async function loadData(res) {
-  let data = await connect.query(0);
+  let data = await connect.queryread(0);
   res.render("index", {
     showTitle: true,
     title: "Hovudside - Stavanger Snakk",
@@ -28,6 +28,11 @@ app.get("/", async function(req, res) {
 
 app.post("/", async function(req, res) {
   console.log(req.body.tekst + " " + req.body.koord);
+  connect.setUserID(1);
+  connect.setLatLng(req.body.koord);
+  connect.setHistory(req.body.tekst);
+
+  await connect.querywrite(0);
   res.redirect("/");
 });
 app.listen(3000);
