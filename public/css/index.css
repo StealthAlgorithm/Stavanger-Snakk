@@ -1,16 +1,17 @@
 /* Må erstattes med mobil*/
 html {
   height: 100%;
-
+  box-sizing: border-box;
   padding: 0px;
   margin: 0px;
 }
 body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
   color: black;
-  margin: 0;
   box-sizing: border-box;
   background-color: #abbed0bd;
-  height: 100%;
   display: grid;
   grid-template-columns: [main-start content-start] 12fr [content-end main-end];
   grid-template-rows: [main-start] 80px [content-start] auto [content-end] 40px [main-end];
@@ -26,14 +27,14 @@ header {
 main {
   grid-area: content;
   min-height: 400px;
-  display: grid;
-  grid-template-columns: 12fr;
 }
 footer {
   grid-column: main;
   background: black;
   text-align: center;
   color: white;
+  bottom: 0;
+  position: fixed;
 }
 #mapid {
   /* bad practise to use % in height*/
@@ -47,6 +48,7 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 1000px;
 }
 textarea {
   min-width: 400px;

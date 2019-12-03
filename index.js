@@ -29,10 +29,9 @@ app.get("/", async function(req, res) {
 
 app.post("/", async function(req, res) {
   let kords = req.body.koord.split(",");
-  await connect.setUserID(1);
-  await connect.setLatLng(kords[0], kords[1]);
-  await connect.setHistory(req.body.tekst);
-
+  connect.setUserID(1);
+  connect.setLatLng(kords[0], kords[1]);
+  connect.setHistory(req.body.tekst);
   connect.querywrite(0);
   res.redirect("/");
 });
