@@ -7,16 +7,19 @@
 
 <main>
     <div id="mapid"></div>
-    <div>
-        <button id="nyM">Legg til ny markør</button>
-        <button id="hPos">Hent min plassering</button>
-    </div>
-    <form style="display:none;" id="nyText" method="POST" action="">
-        <input type="hidden" name="koord" id="sendkord" />
-        <textarea name="tekst"></textarea>
-        <input type="submit" value="send" />
+    <div id="content">
+        <div>
+            <button id="nyM">Legg til ny markør</button>
+            <button id="hPos">Hent min plassering</button>
+        </div>
+        <form style="display:none;" id="nyText" method="POST" action="">
+            <input type="hidden" name="koord" id="sendkord" />
+            <textarea name="tekst"></textarea>
+            <input type="submit" value="send" />
 
-    </form>
+        </form>
+    </div>
+
     <script>
         // Historire kordinat ved ny historie
 
