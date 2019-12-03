@@ -31,6 +31,7 @@
         //skjekk at bruker er i stavanger sentrum?
         function getcords() {
             navigator.geolocation.getCurrentPosition(position => {
+                L.marker([position.coords.latitude, position.coords.longitude], { draggable: 'true' }).addTo(map);
                 document.getElementById("sendkord").value = [position.coords.latitude, position.coords.longitude];
             });
         }

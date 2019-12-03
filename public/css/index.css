@@ -38,7 +38,6 @@ footer {
 #mapid {
   /* bad practise to use % in height*/
   margin-top: 10px;
-  min-height: 300px;
   min-width: 300px;
   /* border-radius: 50%;
 */
@@ -50,8 +49,10 @@ form {
   justify-content: center;
 }
 textarea {
-  min-height: 300px;
   min-width: 400px;
+}
+#historyText {
+  max-width: 500px;
 }
 .transparent {
   background-color: hsla(0, 60%, 0%, 0.4);

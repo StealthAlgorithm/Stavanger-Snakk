@@ -14,6 +14,7 @@ app.use(express.static(__dirname + "/public"));
 
 async function loadData(res) {
   let data = await connect.queryread(0);
+  //  console.log(data[0]);
   res.render("index", {
     showTitle: true,
     title: "Hovudside - Stavanger Snakk",
