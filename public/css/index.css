@@ -15,7 +15,7 @@ body {
 
 header,
 footer {
-  background: black;
+  background: #373636; /*#5a5a5d;*/
   color: white;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@ header {
 
 main {
   grid-area: content;
-  background-color: #abbed0bd;
+  background-color: #b6caddbd;
   color: black;
   padding-bottom: 2rem;
   display: grid;

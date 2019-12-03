@@ -45,8 +45,8 @@
         }
 
         let map = L.map('mapid').setView([58.969975, 5.733107], 14.2);
-        L.tileLayer('https://api.mapbox.com/styles/v1/stealthalgorithm/ck38knnvx1c6z1cpj7nyst8g0/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RlYWx0aGFsZ29yaXRobSIsImEiOiJjazM4aGZsZ2IwOHVoM3Bvdng2a2UwNHUzIn0.H5YK9CC9XhpGRfMt0vtQrw', {
-
+        L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+            // https://api.mapbox.com/styles/v1/stealthalgorithm/ck38knnvx1c6z1cpj7nyst8g0/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RlYWx0aGFsZ29yaXRobSIsImEiOiJjazM4aGZsZ2IwOHVoM3Bvdng2a2UwNHUzIn0.H5YK9CC9XhpGRfMt0vtQrw
         }).addTo(map);
 
         //legger til knapplytter
