@@ -10,7 +10,7 @@ body {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: [main-start content-start] 12fr [content-end main-end];
-  grid-template-rows: [main-start] 80px [content-start] auto [content-end] 40px [main-end];
+  grid-template-rows: [main-start] 7rem [content-start] auto [content-end]4rem [main-end];
 }
 
 header,
@@ -30,9 +30,9 @@ main {
   grid-area: content;
   background-color: #abbed0bd;
   color: black;
-  padding-bottom: 40px;
+  padding-bottom: 2rem;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(24, 1fr);
   grid-template-rows: repeat(12, 1fr);
 }
 
@@ -42,17 +42,26 @@ footer {
   bottom: 0px;
   z-index: 99999;
 }
+h1 {
+  font-size: 4em;
+}
+p {
+  font-size: 2em;
+}
+#mapid,
+#content {
+  grid-column: 2/24;
+}
 
 #mapid {
-  grid-column: 2/12;
   grid-row: 1/7;
   margin-top: 10px;
   min-height: 300px;
   min-width: 300px;
+  border-radius: 50%;
   border: solid black 2px;
 }
 #content {
-  grid-column: 2/11;
   grid-row: 7/12;
 }
 form {
@@ -61,8 +70,18 @@ form {
   justify-content: center;
 }
 
-@media only screen and (max-width: 768px) {
+/*do not need all, just changes */
+@media only screen and (min-width: 1024px) {
+  body {
+    grid-template-rows: [main-start] 5rem [content-start] auto [content-end] 3rem [main-end];
+  }
+  h1 {
+    font-size: 2.5em;
+  }
   #mapid {
-    border-radius: 50%;
+    border-radius: 0%;
+  }
+  p {
+    font-size: 1em;
   }
 }
