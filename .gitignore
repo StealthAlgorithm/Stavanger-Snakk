@@ -396,3 +396,5 @@ packages/react-devtools-shell/dist
 config/
 stavangersnakk/package.json
 stavangersnakk/package.json
+config/db.inc.js
+config/db.inc.js
