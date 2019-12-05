@@ -111,9 +111,7 @@
     {{#each Object}}
 
     <script>
-        L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("historyText").innerHTML = '{{ History }}'; })
-
-
+        L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("historyText").innerHTML = "{{{ History }}}"; });
     </script>
     {{/each}}
 
