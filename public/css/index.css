@@ -239,8 +239,7 @@ textarea {
 #sendbutton  {
   border: none;
   color: white;
-  margin-left:300px;
-  padding: 15px 32px;
+    padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
