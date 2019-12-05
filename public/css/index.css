@@ -60,7 +60,8 @@ p {
 }
 
 #mapid {
-  grid-row: 1/7;
+  /* grid-row: 1/7; */
+  height:40px;
   margin-top: 10px;
   min-height: 300px;
   min-width: 300px;
@@ -69,13 +70,15 @@ p {
   /*border: solid black 2px;*/
 }
 #content {
-  grid-row: 7/12;
+  /* grid-row: 7/12; */
 }
 form {
   display: flex;
+  margin-top: 20px;
   align-items: center;
   justify-content: center;
 }
+
 
 /*do not need all, just changes */
 @media only screen and (min-width: 1024px) {
@@ -233,10 +236,20 @@ textarea {
   margin: 0%;
   padding: 0%;
 }
-#sendbutton {
+#sendbutton  {
   border: none;
   color: white;
+  margin-left:300px;
   padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+#cancelbutton{
+  border: none;
+  color: white;
+    padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;

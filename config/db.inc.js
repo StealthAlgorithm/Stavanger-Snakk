@@ -2,8 +2,8 @@
 const mysql = require("mysql2/promise");
 module.exports = mysql.createPool({
   host: "localhost",
-  user: "user",
-  password: "",
+  user: "root",
+  password: "rupasql",
   database: "StavangerSnakk",
   waitForConnections: true,
   connectionLimit: 10,
