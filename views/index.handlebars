@@ -38,15 +38,15 @@
                 </a>
                 <a href="https://erikterwan.com/" target="_blank">
                     <li>Show me more</li>
-                        </a>
-<a id="nyM">
-    <li>Legg til ny markør</li>
+                </a>
+                <a id="nyM">
+                    <li>Legg til ny markør</li>
 
-</a>
-<a id="hPos">
-    <li>Hent min plassering</li>
-    
-</a>
+                </a>
+                <a id="hPos">
+                    <li>Hent min plassering</li>
+
+                </a>
 
             </ul>
         </div>
@@ -109,9 +109,7 @@
     {{#each Object}}
 
     <script>
-        L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("historyText").innerHTML = '{{ History }}'; })
-
-
+        L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("historyText").innerHTML = "{{{ History }}}"; });
     </script>
     {{/each}}
 
