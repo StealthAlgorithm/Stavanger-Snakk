@@ -53,17 +53,19 @@
 
 
 <main>
-    <div id="mapid"></div>
+
     <div id="content">
+        <div id="mapid"></div>
         {{!-- <div>
             <button id="nyM">Legg til ny markør</button>
             <button id="hPos">Hent min plassering</button>
         </div> --}}
         <form style="display:none;" id="nyText" method="POST" action="">
             <input type="hidden" name="koord" id="sendkord" />
-            <textarea name="tekst"></textarea>
+
             <input id="sendbutton" type="submit" value="send" />
             <input id="cancelbutton" type="submit" value="cancel" />
+            <textarea name="tekst"></textarea>
 
 
         </form>
