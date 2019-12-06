@@ -53,6 +53,7 @@ h1 {
 }
 p {
   font-size: 2em;
+  z-index: 450;
 }
 
 #mapid {
@@ -79,6 +80,7 @@ form {
   align-items: center;
   justify-content: center;
   z-index: 500;
+  bottom: 0;
 }
 
 /*do not need all, just changes */

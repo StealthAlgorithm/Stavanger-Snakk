@@ -62,11 +62,9 @@
         </div> --}}
         <form style="display:none;" id="nyText" method="POST" action="">
             <input type="hidden" name="koord" id="sendkord" />
-
             <input id="sendbutton" type="submit" value="send" />
             <input id="cancelbutton" type="submit" value="cancel" />
             <textarea name="tekst"></textarea>
-
 
         </form>
         <p id="historyText"></p>
@@ -79,7 +77,7 @@
             map.on("click", function (e) {
                 const { lat, lng } = e.latlng;
                 document.getElementById("sendkord").value = [lat, lng];
-                L.marker(e.latlng, { draggable: 'true' }).addTo(map);
+                L.marker(e.latlng, { draggable: 'true' }).addTo(map).bindPopup("Ny markør").openPopup();
             });
         };
 
@@ -93,9 +91,11 @@
 
         function visTextFelt() {
             document.getElementById("nyText").style.display = "block";
+            document.getElementById("historyText").style.display = "none";
         }
         function skjulfelt() {
             document.getElementById("nyText").style.display = "none";
+            document.getElementById("historyText").style.display = "block";
         }
         let map = L.map('mapid').setView([58.969975, 5.733107], 14.2);
         L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
