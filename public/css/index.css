@@ -82,6 +82,25 @@ form {
   z-index: 500;
   bottom: 0;
 }
+textarea {
+  outline: none;
+  width: 100%;
+  height: 184px;
+  resize: none;
+  border: none;
+  margin: 0%;
+  padding: 0%;
+}
+#sendbutton,
+#cancelbutton {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
 
 /*do not need all, just changes */
 @media only screen and (min-width: 1024px) {
@@ -97,32 +116,4 @@ form {
   p {
     font-size: 1em;
   }
-}
-
-textarea {
-  outline: none;
-  width: 100%;
-  height: 184px;
-  resize: none;
-  border: none;
-  margin: 0%;
-  padding: 0%;
-}
-#sendbutton {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-}
-#cancelbutton {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
 }
