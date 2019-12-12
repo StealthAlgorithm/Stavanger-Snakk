@@ -1,13 +1,11 @@
-html {
+html,body {
   height: 100%;
   padding: 0px;
   margin: 0px;
+  font-size: 1.5em;
+  box-sizing: border-box;
 }
 body {
-  padding: 0px;
-  margin: 0px;
-  height: 100%;
-  box-sizing: border-box;
   display: grid;
   grid-template-columns: [main-start content-start] 12fr [content-end main-end];
   grid-template-rows: [main-start] 7rem [content-start] auto [content-end]4rem [main-end];
@@ -81,7 +79,8 @@ p {
   justify-self: center;
   align-self: center;
   z-index: 600;
-  background-color: red;
+  background-color: red;Teksten du inntastet er ikke lang nokk
+
 }
 
 form {
@@ -110,7 +109,7 @@ textarea {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1.2em;
   background: #777575;
 }
 .screensplash {
@@ -123,6 +122,9 @@ textarea {
 
 /*do not need all, just changes */
 @media only screen and (min-width: 1024px) {
+  html,body{
+    font-size:1em;
+  }
   body {
     grid-template-rows: [main-start] 5rem [content-start] auto [content-end] 3rem [main-end];
   }
