@@ -101,6 +101,7 @@ textarea {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  background: #777575;
 }
 .screensplash {
   display: flex;
