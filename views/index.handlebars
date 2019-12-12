@@ -66,6 +66,7 @@
     <script>
         let historietext = document.getElementById("historyText");
         let inputtext = document.getElementById("inputhistory");
+        let message = document.getElementById("message");
         // Historire kordinat ved ny historie
 
         function clickmarker() {
@@ -91,11 +92,12 @@
         function skjulfelt() {
             document.getElementById("nyText").style.display = "none";
             historietext.style.display = "block";
+            message.style.display = "none";
         }
 
         function sjekklengde() {
 
-            let message = document.getElementById("message")
+
 
             if (!(inputtext.value.length > 20)) {
                 console.log(inputtext.value.length);

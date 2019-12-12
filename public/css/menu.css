@@ -1,9 +1,8 @@
 [role="navigation"],
 #menuToggle,
 #menu {
-  width: 98%;
+  width: 100%;
 }
-
 [role="navigation"] {
   justify-self: start;
   position: relative;
@@ -25,7 +24,7 @@
 #menuToggle a {
   text-decoration: none;
   color: #232323;
-
+  font-size: 1.2em;
   transition: color 0.3s ease;
 }
 
@@ -134,4 +133,11 @@
    */
 #menuToggle input:checked ~ ul {
   transform: none;
+}
+@media only screen and (min-width: 1024px) {
+  [role="navigation"],
+  #menuToggle,
+  #menu {
+    width: 40%;
+  }
 }
