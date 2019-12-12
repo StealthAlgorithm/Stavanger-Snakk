@@ -74,6 +74,16 @@ p {
   justify-content: center;
   align-items: flex-end;
 }
+#message {
+  box-sizing: border-box;
+  padding: 2rem;
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  z-index: 600;
+  background-color: red;
+}
+
 form {
   width: 100%;
   position: absolute;

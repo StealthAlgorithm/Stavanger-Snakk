@@ -40,6 +40,7 @@
 
 
 <main>
+    <div id="message" style="display:none;"></div>
     <script src="./jquery-3.4.1.js">
 
 
@@ -50,8 +51,9 @@
             <button id="nyM">Legg til ny markør</button>
             <button id="hPos">Hent min plassering</button>
         </div> --}}
-        <div id="message" style="display:none;"></div>
+
         <form style="display:none;" id="nyText" method="POST" action="">
+
             <input type="hidden" name="koord" id="sendkord" />
             <input id="sendbutton" type="submit" value="send" />
             <input id="cancelbutton" type="submit" value="cancel" />
