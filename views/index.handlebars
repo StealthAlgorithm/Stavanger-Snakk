@@ -1,50 +1,40 @@
 {{#if showTitle}}
-
 <header>
+    <div class="menu-btn">
+        <div class="menu-btn__burger"></div>
+    </div>
 
-    <nav role="navigation">
-        <div id="menuToggle">
-            <input type="checkbox" />
 
-            <span></span>
-            <span></span>
-            <span></span>
-
-            <ul id="menu">
-                <a id="nyM">
-                    <li>Legg til ny markør</li>
-
-                </a>
-                <a id="hPos">
-                    <li>Hent min plassering</li>
-
-                </a>
-                <a href="#">
-                    <li>About</li>
-                </a>
-                <a href="#">
-                    <li>Contact</li>
-                </a>
-
-                <a>
-                    <li>Administrator</li>
-
-                </a>
-
-            </ul>
-        </div>
-    </nav>
     <h1>Stavangersnakk</h1>
 </header>
 {{/if}}
 
+<ul id="menu" style="display: none;">
+    <a id="nyM">
+        <li>Legg til ny markør</li>
 
+    </a>
+    <a id="hPos">
+        <li>Hent min plassering</li>
+
+    </a>
+    <a href="#">
+        <li>About</li>
+    </a>
+    <a href="#">
+        <li>Contact</li>
+    </a>
+
+    <a>
+        <li>Administrator</li>
+
+    </a>
+
+</ul>
 <main>
     <div id="message" style="display:none;"></div>
-    <script src="./jquery-3.4.1.js">
 
 
-    </script>
     <div id="content">
         <div id="mapid"></div>
         {{!-- <div>
@@ -96,9 +86,6 @@
         }
 
         function sjekklengde() {
-
-
-
             if (!(inputtext.value.length > 20)) {
                 console.log(inputtext.value.length);
                 message.style.display = "flex";
@@ -108,22 +95,53 @@
             }
 
         }
+
+        function visnormal() {
+            document.getElementsByTagName("header")[0].style.display = "grid";
+            document.getElementsByTagName("footer")[0].style.display = "flex";
+        }
+        function skjulnormal() {
+            document.getElementsByTagName("header")[0].style.display = "none";
+            document.getElementsByTagName("footer")[0].style.display = "none";
+        }
+        function cpmenu(cp) {
+            if (cp == 1) {
+                document.getElementById("menu").style.display = "grid";
+                document.getElementsByTagName("main")[0].style.display = "none";
+            } else {
+                document.getElementById("menu").style.display = "none";
+                document.getElementsByTagName("main")[0].style.display = "grid";
+            }
+        }
         let map = L.map('mapid').setView([58.969975, 5.733107], 14.2);
         L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
             // https://api.mapbox.com/styles/v1/stealthalgorithm/ck38knnvx1c6z1cpj7nyst8g0/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RlYWx0aGFsZ29yaXRobSIsImEiOiJjazM4aGZsZ2IwOHVoM3Bvdng2a2UwNHUzIn0.H5YK9CC9XhpGRfMt0vtQrw
         }).addTo(map).on("load", function () {
             document.getElementsByClassName("screensplash")[0].style.display = "none";
-            document.getElementsByTagName("header")[0].style.display = "grid";
-            document.getElementsByTagName("footer")[0].style.display = "flex";
-            console.log("map ready")
+            visnormal();
         });
 
         //legger til knapplytter
-        document.getElementById("nyM").addEventListener("mousedown", function () { clickmarker(); visTextFelt(); }, false);
-        document.getElementById("hPos").addEventListener("mousedown", function () { getcords(); visTextFelt(); }, false);
+        document.getElementById("nyM").addEventListener("mousedown", function () { clickmarker(); visTextFelt(); cpmenu(0); }, false);
+        document.getElementById("hPos").addEventListener("mousedown", function () { getcords(); visTextFelt(); cpmenu(0); }, false);
         document.getElementById("cancelbutton").addEventListener("mousedown", function () { skjulfelt() }, false);
         inputtext.addEventListener("blur", function () { sjekklengde() }, false);
         inputtext.addEventListener("mouseleave", function () { sjekklengde() }, false);
+
+        const menuBtn = document.querySelector('.menu-btn');
+        let menuOpen = true;
+        menuBtn.addEventListener("mousedown", () => {
+            if (menuOpen) {
+                menuBtn.classList.remove('open');
+                cpmenu(1);
+                menuOpen = false;
+            } else {
+                menuBtn.classList.add('open');
+                cpmenu(0);
+                menuOpen = true;
+
+            }
+        });
     </script>
 
     {{#each Object}}
