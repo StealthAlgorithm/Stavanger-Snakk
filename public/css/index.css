@@ -169,9 +169,22 @@ textarea {
 }
 #menu {
   z-index: 700;
-  background: white;
+  background-color: #4b6a88bd;
+
+  align-items: center;
   grid-area: content;
   justify-content: center;
+  margin: 0;
+}
+#menu a {
+  text-decoration: none;
+}
+#menu li {
+  cursor: pointer;
+  list-style-type: none;
+  font-size: 1.4em;
+  color: white;
+  font-family: "Lobster", cursive;
 }
 
 /*do not need all, just changes */

@@ -57,6 +57,7 @@
         let historietext = document.getElementById("historyText");
         let inputtext = document.getElementById("inputhistory");
         let message = document.getElementById("message");
+        let menuOpen = true;
         // Historire kordinat ved ny historie
 
         function clickmarker() {
@@ -108,9 +109,11 @@
             if (cp == 1) {
                 document.getElementById("menu").style.display = "grid";
                 document.getElementsByTagName("main")[0].style.display = "none";
+                menuOpen = false;
             } else {
                 document.getElementById("menu").style.display = "none";
                 document.getElementsByTagName("main")[0].style.display = "grid";
+                menuOpen = true;
             }
         }
         let map = L.map('mapid').setView([58.969975, 5.733107], 14.2);
@@ -129,7 +132,7 @@
         inputtext.addEventListener("mouseleave", function () { sjekklengde() }, false);
 
         const menuBtn = document.querySelector('.menu-btn');
-        let menuOpen = true;
+
         menuBtn.addEventListener("mousedown", () => {
             if (menuOpen) {
                 menuBtn.classList.remove('open');
