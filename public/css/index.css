@@ -14,7 +14,8 @@ body {
 }
 
 header,
-footer {
+footer,
+.screensplash {
   background: #373636; /*#5a5a5d;*/
   color: white;
   align-items: center;
@@ -22,7 +23,7 @@ footer {
 header {
   font-family: "Lobster", cursive;
   grid-column: main;
-  display: grid;
+  display: none;
   grid-template-rows: repeat(12, 1fr);
 }
 header > h1 {
@@ -41,9 +42,9 @@ main {
 }
 
 footer {
-  display: flex;
   grid-column: main;
   position: sticky;
+  display: none;
   bottom: 0px;
   z-index: 99999;
   justify-content: center;
@@ -100,6 +101,13 @@ textarea {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+.screensplash {
+  display: flex;
+  z-index: 99999999;
+  grid-area: main;
+  justify-content: center;
+  position: relative;
 }
 
 /*do not need all, just changes */

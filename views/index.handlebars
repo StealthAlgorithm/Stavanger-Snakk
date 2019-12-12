@@ -1,28 +1,15 @@
 {{#if showTitle}}
+
 <header>
 
     <nav role="navigation">
         <div id="menuToggle">
-            <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
             <input type="checkbox" />
 
-            <!--
-    Some spans to act as a hamburger.
-    
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
             <span></span>
             <span></span>
             <span></span>
 
-            <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
             <ul id="menu">
                 <a id="nyM">
                     <li>Legg til ny markør</li>
@@ -53,24 +40,30 @@
 
 
 <main>
+    <script src="./jquery-3.4.1.js">
 
+
+    </script>
     <div id="content">
         <div id="mapid"></div>
         {{!-- <div>
             <button id="nyM">Legg til ny markør</button>
             <button id="hPos">Hent min plassering</button>
         </div> --}}
+        <div id="message" style="display:none;"></div>
         <form style="display:none;" id="nyText" method="POST" action="">
             <input type="hidden" name="koord" id="sendkord" />
             <input id="sendbutton" type="submit" value="send" />
             <input id="cancelbutton" type="submit" value="cancel" />
-            <textarea name="tekst"></textarea>
+            <textarea id="inputhistory" name="tekst"></textarea>
 
         </form>
         <p id="historyText"></p>
     </div>
 
     <script>
+        let historietext = document.getElementById("historyText");
+        let inputtext = document.getElementById("inputhistory");
         // Historire kordinat ved ny historie
 
         function clickmarker() {
@@ -91,27 +84,48 @@
 
         function visTextFelt() {
             document.getElementById("nyText").style.display = "block";
-            document.getElementById("historyText").style.display = "none";
+            historietext.style.display = "none";
         }
         function skjulfelt() {
             document.getElementById("nyText").style.display = "none";
-            document.getElementById("historyText").style.display = "block";
+            historietext.style.display = "block";
+        }
+
+        function sjekklengde() {
+
+            let message = document.getElementById("message")
+
+            if (!(inputtext.value.length > 20)) {
+                console.log(inputtext.value.length);
+                message.style.display = "flex";
+                message.innerText = "Teksten du inntastet er ikke lang nokk";
+            } else {
+                message.style.display = "none";
+            }
+
         }
         let map = L.map('mapid').setView([58.969975, 5.733107], 14.2);
         L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
             // https://api.mapbox.com/styles/v1/stealthalgorithm/ck38knnvx1c6z1cpj7nyst8g0/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic3RlYWx0aGFsZ29yaXRobSIsImEiOiJjazM4aGZsZ2IwOHVoM3Bvdng2a2UwNHUzIn0.H5YK9CC9XhpGRfMt0vtQrw
-        }).addTo(map);
+        }).addTo(map).on("load", function () {
+            document.getElementsByClassName("screensplash")[0].style.display = "none";
+            document.getElementsByTagName("header")[0].style.display = "grid";
+            document.getElementsByTagName("footer")[0].style.display = "flex";
+            console.log("map ready")
+        });
 
         //legger til knapplytter
         document.getElementById("nyM").addEventListener("mousedown", function () { clickmarker(); visTextFelt(); }, false);
         document.getElementById("hPos").addEventListener("mousedown", function () { getcords(); visTextFelt(); }, false);
         document.getElementById("cancelbutton").addEventListener("mousedown", function () { skjulfelt() }, false);
+        inputtext.addEventListener("blur", function () { sjekklengde() }, false);
+        inputtext.addEventListener("mouseleave", function () { sjekklengde() }, false);
     </script>
 
     {{#each Object}}
 
     <script>
-        L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("historyText").innerHTML = "{{{ History }}}"; });
+        L.marker([{{ Latitude }}, {{ Longitude }}]).addTo(map).on('click', function () { document.getElementById("historyText").innerText = "{{{ History }}}"; });
     </script>
     {{/each}}
 
