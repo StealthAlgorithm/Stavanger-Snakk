@@ -103,16 +103,22 @@
         }
         function skjulnormal() {
             document.getElementsByTagName("header")[0].style.display = "none";
+
             document.getElementsByTagName("footer")[0].style.display = "none";
         }
         function cpmenu(cp) {
             if (cp == 1) {
                 document.getElementById("menu").style.display = "grid";
-                document.getElementsByTagName("main")[0].style.display = "none";
+                // $("#menu").css("display", "grid").fadein();
+                //document.getElementsByTagName("main")[0].style.display = "none";
+                $("main").fadeOut();
                 menuOpen = false;
             } else {
-                document.getElementById("menu").style.display = "none";
-                document.getElementsByTagName("main")[0].style.display = "grid";
+                //document.getElementById("menu").style.display = "none";
+                $("#menu").fadeOut();
+
+                //document.getElementsByTagName("main")[0].style.display = "grid";
+                $("main").fadeIn();
                 menuOpen = true;
             }
         }
@@ -122,6 +128,8 @@
         }).addTo(map).on("load", function () {
             document.getElementsByClassName("screensplash")[0].style.display = "none";
             visnormal();
+            //$(".screensplash").fadeOut();
+
         });
 
         //legger til knapplytter
