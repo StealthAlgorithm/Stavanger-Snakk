@@ -115,15 +115,15 @@ document.getElementById("cancelbutton").addEventListener(
   },
   false
 );
-inputtext.addEventListener(
+/* inputtext.addEventListener(
   "blur",
   function() {
     sjekklengde();
   },
   false
-);
+); */
 inputtext.addEventListener(
-  "mouseleave",
+  "keydown",
   function() {
     sjekklengde();
   },
@@ -145,5 +145,8 @@ menuBtn.addEventListener("mousedown", () => {
 });
 
 window.addEventListener("mousedown", function(e) {
-  if (e.target != historietext) historietext.innerText = "";
+  if (e.target != historietext) {
+    historietext.innerText = "";
+    historietext.style.padding = "";
+  }
 });
