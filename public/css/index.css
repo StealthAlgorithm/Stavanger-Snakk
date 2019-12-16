@@ -52,15 +52,17 @@ footer {
 h1 {
   font-size: 3em;
 }
-p {
+#historyText {
   box-sizing: border-box;
   font-size: 1.4em;
   z-index: 1000;
   position: absolute;
   background: white;
-
+  overflow: auto;
   margin: 0;
   bottom: 3rem;
+  min-height: 0;
+  max-height: 100%;
 }
 
 #mapid {
