@@ -12,19 +12,13 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/public"));
 
-async function loadData(res) {
-  let data = await connect.queryread(0);
-  //  console.log(data[0]);
-  res.render("index", {
-    showTitle: true,
-    title: "Hovudside - Stavanger Snakk",
-    Object: data[0]
-  });
-}
-
 app.get("/", async function(req, res) {
   res.status = HttpStatus.OK;
-  loadData(res);
+  res.render("index", {
+    noEscape: true,
+    showTitle: true,
+    title: "Hovudside - Stavanger Snakk"
+  });
 });
 
 app.post("/", async function(req, res) {
@@ -34,5 +28,9 @@ app.post("/", async function(req, res) {
   connect.setHistory(req.body.tekst);
   connect.querywrite(0);
   res.redirect("/");
+});
+app.get("/api/snakk/", async function(req, res) {
+  let data = await connect.queryread(0);
+  res.send(data[0]);
 });
 app.listen(11000);

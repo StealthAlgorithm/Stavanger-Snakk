@@ -9,7 +9,7 @@ body {
 body {
   display: grid;
   grid-template-columns: [main-start content-start] 12fr [content-end main-end];
-  grid-template-rows: [main-start] 7rem [content-start] auto [content-end]4rem [main-end];
+  grid-template-rows: [main-start] 7rem [content-start] auto [content-end]3rem [main-end];
 }
 
 header,
@@ -53,8 +53,14 @@ h1 {
   font-size: 3em;
 }
 p {
-  font-size: 2em;
-  z-index: 450;
+  box-sizing: border-box;
+  font-size: 1.4em;
+  z-index: 1000;
+  position: absolute;
+  background: white;
+
+  margin: 0;
+  bottom: 3rem;
 }
 
 #mapid {
@@ -121,6 +127,7 @@ textarea {
   position: relative;
 }
 .menu-btn {
+  margin-left: 1rem;
   grid-row: 5/8;
   display: flex;
   justify-content: center;
@@ -168,9 +175,8 @@ textarea {
   transform: rotate(-45deg) translate(35px, 35px);
 }
 #menu {
-  z-index: 700;
-  background-color: #4b6a88bd;
-
+  z-index: 2000;
+  background-color: #00091182;
   align-items: center;
   grid-area: content;
   justify-content: center;
@@ -180,11 +186,17 @@ textarea {
   text-decoration: none;
 }
 #menu li {
+  border-radius: 0.5rem;
   cursor: pointer;
   list-style-type: none;
   font-size: 1.4em;
   color: white;
   font-family: "Lobster", cursive;
+  text-align: center;
+  background: #59728a;
+  padding: 2rem;
+  transition: width 0.5s;
+  transition-timing-function: cubic-bezier(0.65, -0.25, 0.25, 1.95);
 }
 
 /*do not need all, just changes */
