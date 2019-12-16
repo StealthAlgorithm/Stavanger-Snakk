@@ -128,6 +128,19 @@ textarea {
   justify-content: center;
   position: relative;
 }
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
 .menu-btn {
   margin-left: 1rem;
   grid-row: 5/8;

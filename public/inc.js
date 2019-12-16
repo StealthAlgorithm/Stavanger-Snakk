@@ -143,3 +143,7 @@ menuBtn.addEventListener("mousedown", () => {
     menuOpen = true;
   }
 });
+
+window.addEventListener("mousedown", function(e) {
+  if (e.target != historietext) historietext.innerText = "";
+});
