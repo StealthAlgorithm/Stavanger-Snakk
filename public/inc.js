@@ -2,23 +2,31 @@ let historietext = document.getElementById("historyText");
 let inputtext = document.getElementById("inputhistory");
 let message = document.getElementById("message");
 let menuOpen = true;
+
+let nymarker;
 // Historire kordinat ved ny historie
 
 function clickmarker() {
-  map.on("click", function(e) {
-    const { lat, lng } = e.latlng;
-    document.getElementById("sendkord").value = [lat, lng];
-    L.marker(e.latlng, { draggable: "true" })
-      .addTo(map)
-      .bindPopup("Ny markør")
-      .openPopup();
+  let markerset = false;
+  map.addEventListener("click", function(e) {
+    console.log(markerset);
+    if (!markerset) {
+      const { lat, lng } = e.latlng;
+      document.getElementById("sendkord").value = [lat, lng];
+
+      nymarker = L.marker(e.latlng, { draggable: "true" })
+        .addTo(map)
+        .bindPopup("Ny markør")
+        .openPopup();
+      markerset = true;
+    }
   });
 }
 
 //skjekk at bruker er i stavanger sentrum?
 function getcords() {
   navigator.geolocation.getCurrentPosition(position => {
-    L.marker([position.coords.latitude, position.coords.longitude], {
+    nymarker = L.marker([position.coords.latitude, position.coords.longitude], {
       draggable: "true"
     })
       .addTo(map)
@@ -111,6 +119,8 @@ document.getElementById("hPos").addEventListener(
 document.getElementById("cancelbutton").addEventListener(
   "mousedown",
   function() {
+    //markerset = false;
+    map.removeLayer(nymarker);
     skjulfelt();
   },
   false

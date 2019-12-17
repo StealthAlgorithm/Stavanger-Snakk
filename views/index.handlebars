@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <script src="/inc.min.js">
+    <script src="/inc.js">
 
     </script>
 
@@ -68,7 +68,7 @@
                 url: "/api/snakk",
                 success: function (Historys) {
                     $.each(Historys, function (i, Histobj) {
-                        console.log(Histobj.History);
+                        //  console.log(Histobj.History);
                         L.marker([Histobj.Latitude, Histobj.Longitude]).addTo(map).on('click', function () { historietext.innerText = Histobj.History; historietext.style.padding = "1rem"; });
                     });
                 }

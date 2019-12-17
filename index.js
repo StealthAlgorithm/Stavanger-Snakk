@@ -15,7 +15,6 @@ app.use(express.static(__dirname + "/public"));
 app.get("/", async function(req, res) {
   res.status = HttpStatus.OK;
   res.render("index", {
-    noEscape: true,
     showTitle: true,
     title: "Hovudside - Stavanger Snakk"
   });
