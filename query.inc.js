@@ -33,7 +33,8 @@ module.exports = class connect {
           sql = "SELECT * FROM History WHERE Active=true;";
           break;
         case 1:
-          sql = "SELECT * FROM History WHERE Active=false;";
+          sql =
+            "SELECT * FROM History WHERE Active=false ORDER BY Created DESC;";
           break;
         default:
           console.log("Feil: sql spørringstype ikke satt");
