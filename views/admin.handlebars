@@ -5,8 +5,27 @@
 </header>
 {{/if}}
 <main class="grid">
-    <div id="adminhist" class="grid"></div>
+    <button id="act">aktive</button>
+    <button id="not">ikke aktive</button>
+    <div id="notactive" class="admin" style="display:none"></div>
+    <div id="active" class="admin" style="display:none"></div>
     <script>
+        $("#not").mousedown(function () { $("#notactive").css("display", "grid"); $("#active").css("display", "none"); });
+        $("#act").mousedown(function () { $("#active").css("display", "grid"); $("#notactive").css("display", "none"); });
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "/api/notactive",
+                success: function (Historys) {
+                    $.each(Historys, function (i, Histobj) {
+                        //  console.log(Histobj.History);
+                        $("#notactive").append("<a>button</a>");
+                        $("#notactive").append("<div class='content'>" + Histobj.History + "</div>");
+
+                    });
+                }
+            });
+        });
         $(function () {
             $.ajax({
                 type: "GET",
@@ -14,14 +33,13 @@
                 success: function (Historys) {
                     $.each(Historys, function (i, Histobj) {
                         //  console.log(Histobj.History);
-                        $("#adminhist").append("<a>button</a>");
-                        $("#adminhist").append("<div class='content'>" + Histobj.History + "</div>");
+                        $("#active").append("<a>button</a>");
+                        $("#active").append("<div class='content'>" + Histobj.History + "</div>");
 
                     });
                 }
             });
         });
-
     </script>
 </main>
 <footer>

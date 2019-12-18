@@ -42,4 +42,9 @@ app.get("/api/snakk/", async function(req, res) {
   let data = await connect.queryread(0);
   res.send(data[0]);
 });
+app.get("/api/notactive/", async function(req, res) {
+  //husk å skjekke admin er logget inn
+  let data = await connect.queryread(1);
+  res.send(data[0]);
+});
 app.listen(11000);

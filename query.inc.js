@@ -30,7 +30,10 @@ module.exports = class connect {
     try {
       switch (type) {
         case 0:
-          sql = "SELECT * FROM History;";
+          sql = "SELECT * FROM History WHERE Active=true;";
+          break;
+        case 1:
+          sql = "SELECT * FROM History WHERE Active=false;";
           break;
         default:
           console.log("Feil: sql spørringstype ikke satt");
@@ -52,8 +55,8 @@ module.exports = class connect {
       switch (type) {
         case 0:
           sql =
-            "INSERT INTO History(UserID, Longitude, Latitude, History) values(?,?,?,?);";
-          variables = [this.UserID, this.lng, this.lat, this.history];
+            "INSERT INTO History(UserID, Longitude, Latitude, History, Active) values(?,?,?,?,?);";
+          variables = [this.UserID, this.lng, this.lat, this.history, true];
           break;
         default:
           console.log("Feil: sql spørringstype ikke satt");

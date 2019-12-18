@@ -223,14 +223,14 @@ textarea {
 .grid {
   display: grid;
 }
-#adminhist {
+.admin {
   grid-column: 1/-1;
   grid-row: 1/-1;
   margin: 0;
   width: 100%;
   grid-template-columns: [control-start] 4fr[control-end content-start] 8fr [content-end];
 }
-#adminhist > .content {
+.admin > .content {
   grid-column: content;
 }
 /*do not need all, just changes */
