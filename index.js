@@ -24,8 +24,10 @@ app.post("/", async function(req, res) {
   let kords = req.body.koord.split(",");
   connect.setUserID(1);
   connect.setLatLng(kords[0], kords[1]);
+
   connect.setHistory(req.body.tekst);
   connect.querywrite(0);
+  console.log(req.body.tekst);
   res.redirect("/");
 });
 app.get("/api/snakk/", async function(req, res) {
