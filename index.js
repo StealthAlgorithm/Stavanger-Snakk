@@ -20,6 +20,13 @@ app.get("/", async function(req, res) {
   });
 });
 
+app.get("/admin", async function(req, res) {
+  res.status = HttpStatus.OK;
+  res.render("admin", {
+    showTitle: true,
+    title: "Administrator - Stavanger Snakk"
+  });
+});
 app.post("/", async function(req, res) {
   let kords = req.body.koord.split(",");
   connect.setUserID(1);
@@ -27,6 +34,7 @@ app.post("/", async function(req, res) {
 
   connect.setHistory(req.body.tekst);
   connect.querywrite(0);
+  console.log(kords);
   console.log(req.body.tekst);
   res.redirect("/");
 });

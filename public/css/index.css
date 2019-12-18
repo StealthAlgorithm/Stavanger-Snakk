@@ -3,7 +3,7 @@ body {
   height: 100%;
   padding: 0px;
   margin: 0px;
-  font-size: 1.5em;
+  font-size: 1em;
   box-sizing: border-box;
 }
 body {
@@ -20,14 +20,17 @@ footer,
   align-items: center;
 }
 header {
+  width: 100%;
   font-family: "Lobster", cursive;
   grid-column: main;
-  display: none;
+  grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
 }
 header > h1 {
-  /*  justify-self: center; */
+  grid-column: 6/8;
   grid-row: 5/8;
+  justify-self: center;
+  align-self: center;
   font-size: 2em;
 }
 
@@ -44,7 +47,6 @@ main {
 footer {
   grid-column: main;
   position: sticky;
-  display: none;
   bottom: 0px;
   z-index: 99999;
   justify-content: center;
@@ -145,6 +147,7 @@ textarea {
 .menu-btn {
   margin-left: 1rem;
   grid-row: 5/8;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -214,7 +217,22 @@ textarea {
   transition: width 0.5s;
   transition-timing-function: cubic-bezier(0.65, -0.25, 0.25, 1.95);
 }
-
+.none {
+  display: none;
+}
+.grid {
+  display: grid;
+}
+#adminhist {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+  margin: 0;
+  width: 100%;
+  grid-template-columns: [control-start] 4fr[control-end content-start] 8fr [content-end];
+}
+#adminhist > .content {
+  grid-column: content;
+}
 /*do not need all, just changes */
 @media only screen and (min-width: 1024px) {
   html,

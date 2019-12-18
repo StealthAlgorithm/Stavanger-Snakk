@@ -1,0 +1,29 @@
+{{#if showTitle}}
+<header class="grid">
+
+    <h1>administrator</h1>
+</header>
+{{/if}}
+<main class="grid">
+    <div id="adminhist" class="grid"></div>
+    <script>
+        $(function () {
+            $.ajax({
+                type: "GET",
+                url: "/api/snakk",
+                success: function (Historys) {
+                    $.each(Historys, function (i, Histobj) {
+                        //  console.log(Histobj.History);
+                        $("#adminhist").append("<a>button</a>");
+                        $("#adminhist").append("<div class='content'>" + Histobj.History + "</div>");
+
+                    });
+                }
+            });
+        });
+
+    </script>
+</main>
+<footer>
+
+</footer>
