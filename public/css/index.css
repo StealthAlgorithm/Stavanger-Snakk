@@ -95,7 +95,7 @@ h1 {
   background-color: red;
 }
 
-form {
+#nyText {
   width: 100%;
   position: absolute;
   display: flex;

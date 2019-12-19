@@ -27,8 +27,8 @@ app.get("/admin", async function(req, res) {
     title: "Administrator - Stavanger Snakk"
   });
 });
-app.post("/", async function(req, res) {
-  let kords = req.body.koord.split(",");
+app.put("/", async function(req, res) {
+  let kords = req.body.koord;
   connect.setUserID(1);
   connect.setLatLng(kords[0], kords[1]);
 
@@ -36,10 +36,13 @@ app.post("/", async function(req, res) {
   connect.querywrite(0);
   console.log(kords);
   console.log(req.body.tekst);
-  res.redirect("/");
+  res.send("markør og historie lagt til!");
 });
 app.get("/api/snakk/", async function(req, res) {
   let data = await connect.queryread(0);
+  /*   setInterval(async function() {
+    data = await connect.queryread(0);
+  }, 5000); */
   res.send(data[0]);
 });
 app.get("/api/notactive/", async function(req, res) {

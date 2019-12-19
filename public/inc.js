@@ -2,7 +2,7 @@ let historietext = document.getElementById("historyText");
 let inputtext = document.getElementById("inputhistory");
 let message = document.getElementById("message");
 let menuOpen = true;
-
+let koord = [];
 let nymarker;
 // Historire kordinat ved ny historie
 
@@ -13,7 +13,7 @@ function clickmarker() {
     if (!markerset) {
       const { lat, lng } = e.latlng;
       document.getElementById("sendkord").value = [lat, lng];
-
+      koord = [lat, lng];
       nymarker = L.marker(e.latlng, { draggable: "true" })
         .addTo(map)
         .bindPopup("Ny markør")
@@ -32,6 +32,8 @@ function getcords() {
       .addTo(map)
       .bindPopup("your current location")
       .openPopup();
+    koord.push(position.coords.latitude);
+    koord.push(position.coords.longitude);
     document.getElementById("sendkord").value = [
       position.coords.latitude,
       position.coords.longitude

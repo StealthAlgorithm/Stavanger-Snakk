@@ -45,14 +45,11 @@
             <button id="hPos">Hent min plassering</button>
         </div> --}}
 
-        <form style="display:none;" id="nyText" method="POST" action="">
-
-            <input type="hidden" name="koord" id="sendkord" />
+        <div style="display:none;" id="nyText">
             <input id="sendbutton" type="submit" value="send" />
             <input id="cancelbutton" type="submit" value="cancel" />
             <textarea id="inputhistory" name="tekst"></textarea>
-
-        </form>
+        </div>
         {{!-- <div class="close">&times;</div> --}}
         <div id="historyText">
 
@@ -65,6 +62,22 @@
 
 
     <script>
+        $("#sendbutton").on("click", function () {
+            let inputhistory = $("#inputhistory").val();
+            /*  {{!-- let koord = $("#sendkoord").val(); --}}*/
+
+            console.log(koord);
+            $.ajax({
+                url: "/",
+                method: "PUT",
+                contentType: "application/json",
+                data: JSON.stringify({ tekst: inputhistory, koord: koord }),
+                success: function (res) {
+                    console.log(res);
+                }
+            });
+
+        });
         $(function () {
             $.ajax({
                 type: "GET",
