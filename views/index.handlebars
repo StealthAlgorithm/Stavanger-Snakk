@@ -74,6 +74,9 @@
                 data: JSON.stringify({ tekst: inputhistory, koord: koord }),
                 success: function (res) {
                     console.log(res);
+                    if (res == "ok") {
+                        window.location.href = "./";
+                    }
                 }
             });
 

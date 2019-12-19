@@ -12,7 +12,6 @@ function clickmarker() {
     console.log(markerset);
     if (!markerset) {
       const { lat, lng } = e.latlng;
-      document.getElementById("sendkord").value = [lat, lng];
       koord = [lat, lng];
       nymarker = L.marker(e.latlng, { draggable: "true" })
         .addTo(map)
@@ -34,10 +33,6 @@ function getcords() {
       .openPopup();
     koord.push(position.coords.latitude);
     koord.push(position.coords.longitude);
-    document.getElementById("sendkord").value = [
-      position.coords.latitude,
-      position.coords.longitude
-    ];
   });
 }
 

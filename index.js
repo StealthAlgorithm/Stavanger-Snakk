@@ -36,7 +36,7 @@ app.put("/", async function(req, res) {
   connect.querywrite(0);
   console.log(kords);
   console.log(req.body.tekst);
-  res.send("markør og historie lagt til!");
+  res.send("ok");
 });
 app.get("/api/snakk/", async function(req, res) {
   let data = await connect.queryread(0);
